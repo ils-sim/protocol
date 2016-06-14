@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+message CallAccept {
+	uint64 id_emerg = 1;
+}
+
+message EmergNew {
+	uint64 id_emerg = 1;
+}
+
+message EmergUpdate {
+	uint64 id_emerg = 1;
+}
+
+message EmergEnd {
+	uint64 id_emerg = 1;
+}
+
+message CaseNew {
+	uint64 id_case = 1;
+}
+
+message CaseUpdate {
+	uint64 id_case = 1;
+}
+
+message CaseEnd {
+	uint64 id_case = 1;
+}
+
+message CallAccepted {
+	uint64 id_emerg = 1;
+	uint64 id_reciever = 2;
+}
+
+message LstMsg {
+	uint32 id_vehicle = 1;
+	uint32 id_message = 2;
+}

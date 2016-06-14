@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+message MsgWall {
+	uint32 id_sender = 1;
+	string new_message = 2;
+}
+
+message MsgChat {
+	uint32 id_sender = 1;
+	string new_message = 2;
+}
+
+message MsgPrivate {
+	uint32 id_sender = 1;
+	string new_message = 2;
+}
+
+message ServerWall {
+	string new_message = 1;
+}
+
+message Quit {
+	
+}
+
+message UserLoginAnswer {
+	uint64 servertime = 1;
+}
+
+message User {
+	uint32 uid = 1;
+	uint32 control_center = 2;
+}
+message UserListAnswer {
+	repeated User user_list = 1;
+}

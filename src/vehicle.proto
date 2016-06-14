@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+message VehicleAlarm {
+	uint32 id_vehicle = 1;
+	uint64 id_emerg = 2;
+	bool blue_light = 3;
+}
+
+message VehicleStorno {
+	uint32 id_vehicle = 1;
+	uint64 id_emerg = 2;
+}
+
+message VehicleMsg {
+	uint32 id_vehicle = 1;
+	string new_message = 2;
+}
+
+message VehicleUpdate {
+	uint32 id_vehicle = 1;
+}
+
+message VehiclePosition {
+	uint32 id_vehicle = 1;
+	double latitude = 2;
+	double longitude = 3;
+}

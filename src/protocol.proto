@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+// includes:
+import "user.proto";
+import "server.proto";
+import "vehicle.proto";
+import "emergencies.proto";
+
+message Protocol {
+	enum Type {
+		USER_LOGIN = 0;
+		USER_LOGOUT = 1;
+		USER_WALL = 50;
+		USER_CHAT = 51;
+		USER_MSG = 52;
+		USER_LIST = 53;
+		CALL_ACCEPT = 54;
+		LST_MSG = 55;
+		VEHICLE_ALARM = 3000;
+		VEHICLE_STORNO = 3001;
+		EMERG_NEW = 4000;
+		EMERG_UPDATE = 4001;
+		EMERG_END = 4002;
+		CASE_NEW = 4500;
+		CASE_UPDATE = 4501;
+		CASE_END = 4502;
+		VEHICLE_MSG = 5000;
+		VEHICLE_UPDATE = 5001;
+		VEHICLE_POSITION = 5002;
+		CALL_ACCEPTED = 7500;
+		MSG_WALL = 7900;
+		MSG_CHAT = 7901;
+		MSG_PRIVATE = 7902;
+		SERVER_WALL = 7903;
+		USER_LOGIN_ANSWER = 7904;
+		USER_LIST_ANSWER = 7905;
+		QUIT = 7950;
+		};
+
+	Type type = 1;
+
+	oneof package {
+		//user.proto
+		UserLogin user_login = 2;
+		UserLogout user_logout = 3;
+		UserWall user_wall = 4;
+		UserChat user_chat = 5;
+		UserMsg user_msg = 6;
+		UserList user_list = 7;
+		//server.proto
+		MsgWall msg_wall = 8;
+		MsgChat msg_chat = 9;
+		MsgPrivate msg_private = 10;
+		ServerWall server_wall = 11;
+		UserLoginAnswer user_login_answer = 12;
+		UserListAnswer user_list_answer = 13;
+		Quit quit = 14;
+		//emergencies.proto
+		CallAccept call_accept = 15;
+		EmergNew emerg_new = 16;
+		EmergUpdate emerg_update = 17;
+		EmergEnd emerg_end = 18;
+		CaseNew case_new = 19;
+		CaseUpdate case_update = 20;
+		CaseEnd case_end = 21;
+		CallAccepted call_accepted = 22;
+		LstMsg lst_msg = 23;
+		//vehicle.proto
+		VehicleAlarm vehicle_alarm = 24;
+		VehicleStorno vehicle_stornno = 25;
+		VehicleMsg vehicle_msg = 26;
+		VehicleUpdate vehicle_update = 27;
+		VehiclePosition vehicle_position = 28;
+
+	}
+}

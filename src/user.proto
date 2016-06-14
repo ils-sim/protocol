@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+// include server.proto for User:
+import "server.proto";
+
+message UserLogin {
+	uint32 uid = 1;
+	uint32 control_center = 2;
+	string password = 3;
+}
+
+message UserLogout {
+	uint32 uid = 1;
+}
+
+message UserWall {
+	string new_message =1;
+}
+
+message UserChat {
+	string new_message = 1;
+}
+
+message UserMsg {
+	uint32 uid_reciever = 1;
+	string new_message = 2;
+}
+
+message UserList {
+	repeated User user_list = 1;
+}
+
