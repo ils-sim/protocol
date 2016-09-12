@@ -1,4 +1,6 @@
+sudo: required
 language: cpp
+cache: ccache
 before_install:
 - ./install_protobuf.sh
 install:
