@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 # public dir's
 SRC_DIR=src
