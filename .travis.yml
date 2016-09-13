@@ -1,15 +1,17 @@
 sudo: required
 language: cpp
-cache: ccache
+
+cache:
+  directories:
+  - $HOME/protobuf
+
 before_install:
-- ./install_protobuf.sh
+  - ./install_protobuf.sh
+  
 install:
-#before_script:
+
+before_script:
+  - ls -R $HOME/protobuf
+
 script:
-- build.sh
-#after_success:
-#after_failure:
-#before_deploy:
-#deploy:
-#after_deploy:
-#after_script:
+  - ./build.sh
