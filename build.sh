@@ -6,7 +6,7 @@ CPP_OUT_DIR=cpp_out
 CSHARP_OUT_DIR=csharp_out
 
 # private dir's
-PROTOC=protoc
+PROTOC=$HOME/protobuf/bin/protoc
 
 # make output dir
 mkdir -p $CPP_OUT_DIR

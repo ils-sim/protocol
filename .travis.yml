@@ -1,0 +1,18 @@
+language: cpp
+
+cache:
+  directories:
+  - $HOME/protobuf
+
+before_install:
+  - ./install_protobuf.sh
+
+before_script:
+  - ls -R $HOME/protobuf
+
+script:
+  - ./build.sh
+
+after_script:
+  - ls -al cpp_out/
+  - ls -al csharp_out/
