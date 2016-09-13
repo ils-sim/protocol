@@ -7,7 +7,7 @@ if [ ! -d "$HOME/protobuf/lib" ]; then
 	cd protobuf-3.0.0-beta-3/
 	./configure --prefix=$HOME/protobuf
 	make
-	sudo make install
+	make install
 else
   echo "Using cached directory."
 fi
