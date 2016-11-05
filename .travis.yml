@@ -1,17 +1,14 @@
+sudo: required
 language: cpp
 
-cache:
-  directories:
-  - $HOME/protobuf
+services:
+  - docker
 
 before_install:
-  - ./install_protobuf.sh
-
-before_script:
-  - ls -R $HOME/protobuf
+  - docker pull ilssim/main
 
 script:
-  - ./build.sh
+  - docker run -t -i -v $PWD:/src -w /src ilssim/main /bin/bash -c './build.sh'
 
 after_script:
   - ls -al cpp_out/
