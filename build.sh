@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ex
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # public dir's
 SRC_DIR=src
@@ -7,7 +8,7 @@ CPP_OUT_DIR=cpp_out
 CSHARP_OUT_DIR=csharp_out
 
 # private dir's
-PROTOC=$HOME/protobuf/bin/protoc
+PROTOC=protoc
 
 # make output dir
 mkdir -p $CPP_OUT_DIR
