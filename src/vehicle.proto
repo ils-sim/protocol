@@ -18,7 +18,7 @@ message VehicleMsg {
 
 message VehicleUpdate {
 	enum Status {
-		NOT_USED = 0
+		NOT_USED = 0;
 		NOT_OPERATIONAL = 1;
 		OPERATIONAL = 2;
 		EMERGENCY_ACCEPTED = 3;
