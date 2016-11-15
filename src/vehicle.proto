@@ -17,7 +17,7 @@ message VehicleMsg {
 }
 
 message VehicleUpdate {
-	enum Status {
+	enum VehicleStatus {
 		NOT_USED = 0;
 		NOT_OPERATIONAL = 1;
 		OPERATIONAL = 2;
@@ -32,7 +32,7 @@ message VehicleUpdate {
 		};
 		
 	uint32 id_vehicle = 1;
-	Status status = 2;
+	VehicleStatus status = 2;
 	double destination_latitude = 3;
 	double destination_longitude = 4;
 	uint32 id_emerg = 5;
