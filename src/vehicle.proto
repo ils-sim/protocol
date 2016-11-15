@@ -17,7 +17,27 @@ message VehicleMsg {
 }
 
 message VehicleUpdate {
+	enum Status {
+		NOT_USED = 0
+		NOT_OPERATIONAL = 1;
+		OPERATIONAL = 2;
+		EMERGENCY_ACCEPTED = 3;
+		EMERGENCY_ARRIVED = 4;
+		EMERGENCY_DEPARTED = 5;
+		DESTINATION_ARRIVED = 6;
+		DESTINATION_DEPARTED = 7;
+		DEPARTMENT_ARRIVED = 8;
+		VEHICLE_OCCUPY = 9;
+		PATIENT_FOUND = 10;
+		};
+		
 	uint32 id_vehicle = 1;
+	Status status = 2;
+	double destination_latitude = 3;
+	double destination_longitude = 4;
+	uint32 id_emerg = 5;
+	uint32 id_patient = 6;
+	bool blue_light = 7;
 }
 
 message VehiclePosition {
